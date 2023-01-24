@@ -1,0 +1,23 @@
+footer{
+    border-top: 1px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+}
+footer h4{
+    margin-bottom: 1.2em;
+    font-weight: bold;
+    color: black
+}
+footer span {
+    font-weight: bold;
+    color: #4898b6;
+}
+p{
+    padding: 0;
+    margin: 0;
+    font-family: 'Times New Roman';
+    color: #444;
+}

@@ -1,0 +1,20 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './components/page/about/about.component';
+import { HomeComponent } from './components/page/home/home.component';
+import { UploadsComponent } from './components/page/uploads/uploads.component';
+import { LoginComponent } from './components/login/login.component';
+import { ScreenLoginOrSignupComponent } from './components/page/screen-login-or-signup/screen-login-or-signup.component';
+
+const routes: Routes = [
+  {path: '', component: ScreenLoginOrSignupComponent},
+  {path: 'home', component: HomeComponent},
+  {path: 'about', component: AboutComponent},
+  {path: 'uploads', component: UploadsComponent},
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

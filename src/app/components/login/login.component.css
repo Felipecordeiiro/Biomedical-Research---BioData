@@ -1,0 +1,66 @@
+.conteudo_login, .conteudo_sign_up{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10%;
+}
+.login, .sign_up{
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 30px 60px 0 #082f52;
+    text-align: center;
+    width: 45%;
+    height: 350px;
+    transition: all 0.5s ease-in;
+}
+.login:hover{
+    box-shadow: 0 30px 60px 0 #1a5a74;
+}
+.sign_up:hover{
+    box-shadow: 0 30px 60px 0 #1a5a74;
+}
+::placeholder{
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+.Btn_submit{
+    margin-top: 10px;
+    border: none;
+    font-size: 14px;
+    width: 40%;
+    background-color: #082f52;
+    color: white;
+    padding: 12px 0px;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px 0 #6fb0c1;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+.Btn_submit:hover{
+    box-shadow: 0 10px 30px 0 #1a5a74;
+}
+.organization{
+    padding: 7px;
+    background-color:white;
+    border: #576979;
+    color: black;
+    text-align: center;
+    font-size: 12px;
+    margin: 5px;
+    width: 90%;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+}
+h3{
+    margin: 10px;
+    color: #082f52;
+    font-weight: bold;
+    font-size: 20px;
+}
+.message-error{
+    margin: 1px;
+    color:red;
+    font-size: 10px;
+    font-weight: bold;
+}
