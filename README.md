@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Site
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.1.
@@ -25,3 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+=======
+# Biomedical-Research---BioData
+Linha de pesquisa responsável pela elaboração do front - end e back - end para médicos ortopedistas.
+>>>>>>> 32a04164c9b74a7ee826feb4ce335560c23615e4
