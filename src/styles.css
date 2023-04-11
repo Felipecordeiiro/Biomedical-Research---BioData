@@ -37,6 +37,16 @@ form{
     font-size: .8em;
 }
 
+.input{
+    display: block;
+}
+
+input[type="radio"]{
+    display: table-column;
+    padding: .8em;
+
+}
+
 input[type="submit"]{
     background-color: #082f52;
     color:#6fb0c1;

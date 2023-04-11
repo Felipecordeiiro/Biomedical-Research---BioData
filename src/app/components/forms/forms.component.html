@@ -14,8 +14,40 @@
         <textarea placeholder="put the description of image" 
         formControlName="description" 
         required></textarea>
+        <ul></ul>
         <div *ngIf="description.invalid && formDir.submitted" class="validation-error">
             <p *ngIf="description.errors?.['required']">The description is required</p>
+        </div>
+    </div>
+    <div class="forms-group">
+        <label for="name">Name</label>
+        <input type="text"
+        placeholder="put patient name"
+        formControlName="name"
+        required>
+        <div *ngIf="name.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="name.errors?.['required']">The name of patient is required</p>
+        </div>
+    </div>
+    <div class="forms-group">
+        <label for="age">Age</label>
+        <input type="number" 
+        placeholder="put patient age"
+        formControlName="age"
+        required>
+        <div *ngIf="age.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="age.errors?.['required']">The age of patient is required</p>
+        </div>
+    </div>
+    <div class="forms-group">
+        <label for ="gender">Gender</label>
+        <div class="input">
+            <input type="radio" formControlName="gender" value="masculino"> Masculino
+            <input type="radio" formControlName="gender" value="feminino"> Feminino
+            <input type="radio" formControlName="gender" value="outro"> Outro
+        </div>
+        <div *ngIf="momentForm.controls['gender'].invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="momentForm.controls['gender'].errors?.['required']">This field is required</p>
         </div>
     </div>
     <div class="forms-group">

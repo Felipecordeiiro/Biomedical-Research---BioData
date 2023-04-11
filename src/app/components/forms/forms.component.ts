@@ -20,9 +20,13 @@ export class FormsComponent {
 
   ngOnInit(): void{
     this.momentForm = new FormGroup({
+
       id: new FormControl(''),
       title: new FormControl('', [Validators.required]),
       description: new FormControl('', [Validators.required]),
+      name: new FormControl('',[Validators.required]),
+      age: new FormControl('',[Validators.required]),
+      gender: new FormControl('',[Validators.required]),
       image: new FormControl(''),
 
     })
@@ -33,6 +37,15 @@ export class FormsComponent {
   }
   get description(){
     return this.momentForm.get('description')!;
+  }
+  get name(){
+    return this.momentForm.get('name')!;
+  }
+  get age(){
+    return this.momentForm.get('age')!;
+  }
+  get gender(){
+    return this.momentForm.get('gender')!;
   }
 
   onFileSelected(event: any){

@@ -5,6 +5,7 @@ import { HomeComponent } from './components/page/home/home.component';
 import { UploadsComponent } from './components/page/uploads/uploads.component';
 import { LoginComponent } from './components/login/login.component';
 import { ScreenLoginOrSignupComponent } from './components/page/screen-login-or-signup/screen-login-or-signup.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 const routes: Routes = [
   {path: '', component: ScreenLoginOrSignupComponent},
