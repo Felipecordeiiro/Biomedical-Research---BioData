@@ -16,6 +16,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ScreenLoginOrSignupComponent } from './components/page/screen-login-or-signup/screen-login-or-signup.component';
 import { AuthService } from './auth/auth.service';
+import { MLComponent } from './components/page/ml/ml.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { AuthService } from './auth/auth.service';
     LoginComponent,
     SignUpComponent,
     ScreenLoginOrSignupComponent,
+    MLComponent,
   ],
   imports: [BrowserModule, 
     AppRoutingModule, 
