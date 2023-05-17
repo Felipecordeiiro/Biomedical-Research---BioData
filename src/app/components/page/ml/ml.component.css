@@ -4,25 +4,32 @@ h2, span{
 }
 p{
     margin-bottom: 10em;
-    font-size: ;
+    font-size: 15px;
 }
 .choose_method{
     justify-content: center;
     display: flex;
 }
 label{
-    font-weight: bold;
-    font-size: 1.1em;
-    padding: 0.7em 1em;
-    box-sizing: border-box;
-    margin: 0 6em;
+    text-align: center;
+    margin-top: 10px;
+    margin-right: 5em;
+    border: none;
+    font-size: 14px;
+    width: 20%;
+    background-color: #082f52;
+    color: white;
+    padding: 15px 0px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px 0 #6fb0c1;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
 }
 label:hover{
-    font-weight: bold;
-    font-size: 1.1em;
-    padding: 0.7em 1em;
-    border: 4px solid transparent;
-    border-color: #082f52;
-    color: #6fb0c1;
-    margin: 0 6em;
+    box-shadow: 0 10px 30px 0 #1a5a74;
+}
+img{
+    align-content: center;
+    width: 350px;
+    height: 150px;
 }
