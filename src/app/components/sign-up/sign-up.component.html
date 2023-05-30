@@ -1,0 +1,64 @@
+<div class="conteudo_sign_up">
+    <form class="sign_up" [formGroup]=sign_upform (submit)="Fazersign_up()">
+        <h3>Sign Up</h3>
+        <div>
+            <label for="Name"></label>
+            <input  
+            class="organization" 
+            id="Name"
+            type="text"
+            placeholder="Your full name"
+            formControlName="nome"
+            required
+            >
+            <div class="message-error" 
+            *ngIf="sign_upform.get('nome')?.errors?.['required'] && sign_upform.get('nome')?.touched">
+            Required field!   
+            </div>
+            <label for="User"></label>
+            <input
+            class="organization"  
+            id="User"
+            type="text"
+            placeholder="Your user"
+            formControlName="user"
+            required
+            >
+            <div class="message-error" 
+            *ngIf="sign_upform.get('user')?.errors?.['required'] && sign_upform.get('user')?.touched">
+            Required field!   
+            </div>
+            <label for="Email"></label>
+            <input 
+            class="organization"
+            id="Email_signup"
+            type="email"
+            placeholder="Your email"
+            formControlName="email_sign_up"
+            required
+            >
+            <div class="message-error" 
+            *ngIf="sign_upform.get('email_sign_up')?.errors?.['required'] && sign_upform.get('email_sign_up')?.touched">
+            Required field!   
+            </div>
+            <label for="password_signup"></label>
+            <input 
+            class="organization"
+            id="Password_signup"
+            type="password"
+            placeholder="Your password"
+            formControlName="senha_sign_up"
+            required
+            >
+            <div class="message-error" 
+            *ngIf="sign_upform.get('senha_sign_up')?.errors?.['required'] && sign_upform.get('senha_sign_up')?.touched">
+            Required field!   
+            </div>
+        </div>
+        <div>
+            <button class="Btn_submit" type="submit" 
+            [disabled]="!sign_upform.valid"
+            (submit)="Fazersign_up()">Submit</button>
+        </div>
+    </form>
+</div>
