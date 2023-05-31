@@ -6,4 +6,7 @@
     <label for="ml">Model of Machine Learning</label>
     <label for="manual">Manual</label>
 </div>
-<canvas id="canvas"></canvas>
+<div class="image_canvas">
+    <canvas #canvas (click)="handleClick($event)"></canvas>
+</div>
+<div id="angle"></div>
