@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, OnInit, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit, AfterViewInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-ml',
@@ -14,20 +14,36 @@ export class MLComponent implements OnInit, AfterViewInit{
 
   ngOnInit() {
   }
+  onFileSelected(event: any){
+    const file: File = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = (e:any) => {
+      this.image = new Image(350,350)
+      this.image.onload = () => {
+
+        const canvas = this.canvasRef.nativeElement; 
+        canvas.width = this.image.width;
+        canvas.height = this.image.height;
+
+        if(this.ctx){
+          this.ctx.drawImage(this.image, 0, 0, canvas.width, canvas.height);
+        };
+      };
+    this.image.src = e.target.result;
+    }
+    reader.readAsDataURL(file)
+  }
+  
 
   ngAfterViewInit(){
     const canvas = this.canvasRef.nativeElement;
     this.ctx = canvas.getContext("2d")
 
-    this.image = new Image(350, 350);
-    this.image.src = "../../../../../assets/pes.jpg";
-    this.image.onload = () => {
-      canvas.width = this.image.width;
-      canvas.height = this.image.height;
-      if(this.ctx){
-        this.ctx.drawImage(this.image, 0, 0, canvas.width, canvas.height);
-      }
-    };
+    const inputElement = document.getElementById("fileInput") as HTMLInputElement;
+    inputElement.addEventListener("change", (event) => {
+      this.onFileSelected(event);
+    });
   }
 
   drawLine(xImg1: number, yImg1: number, xImg2: number, yImg2: number) {
@@ -65,7 +81,13 @@ export class MLComponent implements OnInit, AfterViewInit{
   private lastClick: [number, number] | null = null;
   private firstLine: [number, number, number, number] | null = null;
 
+  btn_semiautomatico(){
+
+  }
+
   handleClick(event: MouseEvent) {
+    if(!this.image) return; 
+
     const x = event.offsetX;
     const y = event.offsetY;
 

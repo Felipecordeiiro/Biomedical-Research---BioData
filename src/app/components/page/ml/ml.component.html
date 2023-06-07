@@ -1,12 +1,20 @@
 <h2>Choose your <span>method</span></h2>
 <p>Your chosen method may differents accuracy of line and determination angles</p>
 
-<div class="choose_method">
-    <label for="processing_img">Processing image</label>
-    <label for="ml">Model of Machine Learning</label>
-    <label for="manual">Manual</label>
+<h1>
+    <label for="image" class="upload_your_image">Upload your image for to use the method:</label> 
+</h1>
+<div class="input-file">
+    <input id="fileInput" type="file" (change) ="onFileSelected($event)">
 </div>
-<div class="image_canvas">
+<div class="canvas-container">
     <canvas #canvas (click)="handleClick($event)"></canvas>
+</div>
+
+<div class="master">
+                     
+    <label class="label_master" for="deep_Learning">Deep Learning</label>
+    <label class="label_master" for="">Semi-Automatic</label>
+
 </div>
 <div id="angle"></div>
