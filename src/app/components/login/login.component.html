@@ -1,0 +1,38 @@
+<div class="conteudo_login">
+    <form class="login" [formGroup]=loginForm (submit)="Fazerlogin()">
+        <h3>Login</h3>
+        <div>
+            <label for="Email"></label>
+            <input
+            class="organization" 
+            id="Email"
+            type="email"
+            placeholder="Email or User"
+            formControlName="email"
+            required
+            >
+            <div class="message-error" 
+            *ngIf="loginForm.get('email')?.errors?.['required'] && loginForm.get('email')?.touched">
+            Required field!   
+            </div>
+            <label for="Password"></label>
+            <input 
+            class="organization"
+            id="Password"
+            type="password"
+            placeholder="Your password"
+            formControlName="senha"
+            required
+            >
+            <div class="message-error" 
+            *ngIf="loginForm.get('senha')?.errors?.['required'] && loginForm.get('senha')?.touched">
+            Required field!   
+            </div>
+        </div>
+        <div>
+            <button class="Btn_submit" type="submit" 
+            [disabled]="!loginForm.valid"
+            (click)="Fazerlogin()">Submit</button>
+        </div>
+    </form>
+</div>
