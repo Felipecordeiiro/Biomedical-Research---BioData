@@ -39,7 +39,7 @@ export class MLComponent implements AfterViewInit {
       this.drawImage();
     };
 
-    this.image.src = "/../../../../assets/pes.jpg";
+    this.image.src = "assets/pes.jpg";
   }
 
   selectMethod(method: 'processing' | 'ml' | 'manual'): void {
