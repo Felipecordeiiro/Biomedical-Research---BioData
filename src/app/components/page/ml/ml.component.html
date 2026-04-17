@@ -1,9 +1,78 @@
-<h2>Choose your <span>method</span></h2>
-<p>Your chosen method may differents accuracy of line and determination angles</p>
+<section class="ml-demo">
+    <div class="intro-card">
+        <p class="eyebrow">Orthopedic demo</p>
+        <h2>Strategic line calculation for <span>ankle and foot comprehension</span></h2>
+        <p class="intro-copy">
+            This demo was organized to support orthopedic interpretation of the ankle and foot through strategic lines, visual inspection and angular comparison.
+        </p>
+    </div>
 
-<div class="choose_method">
-    <label for="processing_img">Processing image</label>
-    <label for="ml">Model of Machine Learning</label>
-    <label for="manual">Manual</label>
-</div>
-<canvas id="canvas"></canvas>
+    <div class="workspace">
+        <aside class="sidebar">
+            <div class="panel">
+                <h3>Choose your method</h3>
+                <p class="panel-copy">Each method represents a different stage of analysis for the same anatomical image.</p>
+
+                <div class="method-grid">
+                    <button type="button" class="method-card" [class.active]="selectedMethod === 'processing'" (click)="selectMethod('processing')">
+                        <strong>Processing image</strong>
+                        <span>Prepare contrast and visual clarity before defining orthopedic references.</span>
+                    </button>
+
+                    <button type="button" class="method-card" [class.active]="selectedMethod === 'ml'" (click)="selectMethod('ml')">
+                        <strong>Machine Learning</strong>
+                        <span>Represents the future automated support layer for landmark suggestion.</span>
+                    </button>
+
+                    <button type="button" class="method-card" [class.active]="selectedMethod === 'manual'" (click)="selectMethod('manual')">
+                        <strong>Manual</strong>
+                        <span>Current interactive demo for drawing two lines and validating the angle.</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h3>Image source</h3>
+                <p class="panel-copy">Upload another radiographic or clinical image to replace the demo file.</p>
+
+                <label class="upload-trigger" for="image">
+                    <span class="upload-title">Choose image</span>
+                    <span class="upload-subtitle">Custom upload for the orthopedic demo workspace</span>
+                </label>
+                <input id="image" type="file" accept="image/*" (change)="onFileSelected($event)">
+
+                <div class="file-chip">
+                    {{ selectedFileName }}
+                </div>
+            </div>
+
+            <div class="panel result-panel">
+                <div class="result-header">
+                    <h3>Angular result</h3>
+                    <button type="button" class="ghost-button" (click)="resetMeasurements()">Reset lines</button>
+                </div>
+
+                <div class="angle-box" [class.has-value]="angleResult !== null">
+                    <span class="angle-value">{{ angleResult !== null ? (angleResult | number:'1.0-2') + '°' : '--' }}</span>
+                    <p>Result based on the last pair of strategic lines drawn on the image.</p>
+                </div>
+
+                <p class="status-copy">{{ statusMessage }}</p>
+            </div>
+        </aside>
+
+        <div class="canvas-panel">
+            <div class="canvas-header">
+                <div>
+                    <p class="canvas-kicker">Interactive image</p>
+                    <h3>Ankle / foot demo canvas</h3>
+                </div>
+                <p class="canvas-help">In manual mode, click two points for the first line and two more points for the second.</p>
+            </div>
+
+            <div class="canvas-frame">
+                <canvas #canvas id="canvas" (click)="handleCanvasClick($event)"></canvas>
+            </div>
+        </div>
+    </div>
+</section>

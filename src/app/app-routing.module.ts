@@ -10,6 +10,7 @@ import { MLComponent } from './components/page/ml/ml.component';
 
 const routes: Routes = [
   {path: '', component: ScreenLoginOrSignupComponent},
+  {path: 'signup', component: SignUpComponent},
   {path: 'home', component: HomeComponent},
   {path: 'about', component: AboutComponent},
   {path: 'uploads', component: UploadsComponent},
